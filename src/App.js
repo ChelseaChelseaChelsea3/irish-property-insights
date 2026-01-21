@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from 'react';
-import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ScatterChart, Scatter } from 'recharts';
-import { Search, TrendingUp, MapPin, Home, Calendar, DollarSign, BarChart3, Filter, X } from 'lucide-react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { Search, TrendingUp, MapPin, Home, Calendar, DollarSign, BarChart3, Upload, Download, AlertCircle, Check, Database } from 'lucide-react';
 
 // Sample PPR-style data (in production, this would come from your database)
 const samplePPRData = [
@@ -33,7 +33,6 @@ const generateTrendData = () => {
 
 const PropertyAnalyzer = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedArea, setSelectedArea] = useState('All');
   const [selectedType, setSelectedType] = useState('All');
   const [priceRange, setPriceRange] = useState([0, 2000000]);
   const [activeView, setActiveView] = useState('search'); // search, trends, insights
